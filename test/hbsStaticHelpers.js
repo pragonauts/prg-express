@@ -45,7 +45,7 @@ describe('#hbsStaticHelpers()', function () {
                 return;
             }
 
-            assert.equal(res, '<h1>response-helper</h1><b>response</b>');
+            assert.equal(res, '<h1>response-helper</h1><b>response</b>foo');
             assert(staticHelpers.helper.calledTwice, 'helper should be called twice');
 
             const args = staticHelpers.helper.firstCall.args;

@@ -1,6 +1,6 @@
 {
   "name": "prg-express",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Express utitlities for automatic https redirects, slash forcing, logging, error handling and Handlebars templating",
   "main": "index.js",
   "scripts": {

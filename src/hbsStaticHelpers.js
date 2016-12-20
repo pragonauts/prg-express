@@ -5,7 +5,7 @@
 
 const handlebars = require('handlebars');
 
-const COMPILE_TIME_REGEX = /\{\{\$([^}#/\s]+\s[^}]+)\}\}/ig;
+const COMPILE_TIME_REGEX = /\{\{\$([^}#/\s]+(\s[^}]+)?)\}\}/ig;
 const SINGLE_QUTES = /^'([^']*)'$/;
 const DOUBLE_QUTES = /^"([^"]*)"$/;
 
@@ -15,7 +15,7 @@ function parse (template, helpers, data) {
         const tag = `{{${contents}}}`;
 
         if (typeof helpers[name] !== 'function') {
-            return tag;
+            return typeof data[name] !== 'undefined' ? data[name] : tag;
         }
 
         args.push({
